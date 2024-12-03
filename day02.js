@@ -50,17 +50,14 @@ function main() {
             continue;
         }
         
-        // First check if it's safe without removing anything
         let safe = isSafe(item);
         if(safe === true) {
             safeCount++;
             continue;
         }
 
-        // If not safe, try removing each number one at a time
         let canBeMadeSafe = false;
         for(let i = 0; i < item.length; i++) {
-            // Create a copy of the array without the current position
             const modifiedItem = [...item];
             modifiedItem.splice(i, 1);
             
